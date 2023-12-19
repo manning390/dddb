@@ -1,5 +1,5 @@
 <script>
-    let user = "user";
+    let user = 'user';
 </script>
 
 <div>
