@@ -5,7 +5,15 @@ export default {
         './resources/js/**/*.{js,svelte}',
     ],
     theme: {
-        extend: {},
+        extend: {
+            backgroundImage: {
+                noise: "url('http://localhost/img/noise.png')"
+            },
+            spacing: {
+                sidebar: '370px',
+                box: '389px'
+            }
+        }
     },
     plugins: [],
 };

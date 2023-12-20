@@ -4,8 +4,6 @@ import { defineConfig } from "vite";
 import { resolve } from 'path';
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 
-const projectRoot = resolve(__dirname);
-
 export default defineConfig({
     plugins: [
         laravel({
@@ -18,8 +16,8 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            "@": resolve(projectRoot, "resources/js"),
-            ziggy: resolve(projectRoot, "vendor/tightenco/ziggy/dist/index.es"),
+            "@": resolve(__dirname, "resources/js"),
+            ziggy: resolve(__dirname, "vendor/tightenco/ziggy/dist/index.es"),
         },
         extensions: [".js", ".svelte", ".json"],
     },
