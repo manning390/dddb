@@ -3,9 +3,14 @@
     import Header from '@/Components/Header.svelte';
     import Sidebar from '@/Components/Sidebar.svelte';
     import Box from '@/Components/Box.svelte';
-    import { createBoxesStore } from '@/stores/box';
+    import { boxes } from '@/stores/box';
 
-    const boxes = createBoxesStore([ ]);
+    boxes.set([
+        {id: 0, name: 'test0'},
+        {id: 1, name: 'test1'},
+        {id: 2, name: 'test2'},
+        {id: 3, name: 'test3'},
+    ]);
 </script>
 
 <Sidebar />

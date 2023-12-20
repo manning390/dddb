@@ -9,6 +9,7 @@
         Share,
         Star,
     } from '@/Components/icons';
+    import {boxes} from '@/stores/box';
 
     let sidebar = true;
     let pages = [{ id: 0, name: 'Default' }];
@@ -46,7 +47,7 @@
         <div class="flex gap-1">
             <div
                 class="flex h-8 w-8 items-center justify-center rounded-full bg-black">
-                <span>{'4'}</span>
+                <span>{$boxes.length}</span>
             </div>
             <button >
                 <Share />
