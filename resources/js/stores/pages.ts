@@ -46,7 +46,7 @@ export const createPagesStore = (
     }
 ) => {
     const store = persisted('pages', initial, {
-        serializer: devalue,
+        // serializer: devalue,
         syncTabs: true,
     });
 
@@ -95,6 +95,12 @@ export const createPagesStore = (
         setActivePage: (idx: number) => {
             if (idx < 0 || idx >= get(store).pages.length) return;
             store.update((prev) => ({ ...prev, activePage: idx }));
+        },
+        renamePage: (name: string) => {
+            store.update((prev) => {
+                prev.pages[prev.activePage].name = name;
+                return prev;
+            });
         },
     };
 };

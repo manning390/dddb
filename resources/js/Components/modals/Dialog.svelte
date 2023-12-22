@@ -29,11 +29,11 @@
 <p class="my-4 p-4 text-center">{message}</p>
 <div class="flex justify-between">
     <Button
-        class={cn('w-5/12 bg-danger font-bold active:bg-red-900', cancelClass)}
+        class={cn('active:bg-red-900 w-5/12 bg-danger font-bold', cancelClass)}
         on:click={_onCancel}>{cancelText}</Button>
     <Button
         class={cn(
-            'w-5/12 bg-success font-bold active:bg-lime-700',
+            'active:bg-lime-700 w-5/12 bg-success font-bold',
             confirmClass
         )}
         on:click={_onConfirm}>{confirmText}</Button>

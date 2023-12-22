@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-    @apply bg-base-bg text-typo bg-noise;
+html,
+body {
+    @apply bg-base-bg bg-noise text-typo;
 }
 hr {
-    @apply border-base-600 my-4;
+    @apply my-4 border-base-600;
 }
 .h-header-offset {
     height: calc(100vh - 116px);

@@ -10,7 +10,7 @@
 <button
     use:forwardEvents
     class={cn(
-        'gap-1 rounded-md border border-black bg-stone-600 px-2 py-1 active:border-stone-300 active:bg-stone-500',
+        'border-black gap-1 rounded-md border bg-base-600 px-2 py-1 hover:bg-base-400 active:border-base-300 active:bg-base-500',
         className
     )}
     {...$$restProps}><slot /></button>

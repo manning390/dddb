@@ -6,38 +6,45 @@
     const { removeCard } = getContext('pages');
 
     export let card;
-
 </script>
 
 <div
     data-id={card.id}
-    class={cn('card w-80  rounded border border-black bg-base-600', 'small')}>
+    class={cn('card border-black  w-80 rounded border bg-base-600', 'small')}>
     <div class="flex justify-between p-1">
         <div class="flex gap-2">
-            <img src="https://placehold.co/42" alt={card.name} class="rounded-md"/>
+            <img
+                src="https://placehold.co/42"
+                alt={card.name}
+                class="rounded-md" />
             <div>
-                <h3 class="text-lg text-cyan-300 shadow-base-bg text-shadow h-5">
+                <h3
+                    class="text-cyan-300 h-5 text-lg shadow-base-bg text-shadow">
                     {card.name}
                 </h3>
-                <small class="text-shadow shadow-black">{card?.subtitle || ''}</small>
+                <small class="shadow-black text-shadow"
+                    >{card?.subtitle || ''}</small>
             </div>
         </div>
         <div class="flex gap-1">
             <button on:click={() => console.log('cog')} class="h-4">
-                <Cog class="w-4 h-4 cursor-pointer" />
+                <Cog class="h-4 w-4 cursor-pointer" />
             </button>
             <button on:click={() => removeCard(card)} class="h-4">
-                <Close class="w-4 h-4 cursor-pointer" />
+                <Close class="h-4 w-4 cursor-pointer" />
             </button>
         </div>
     </div>
-    <nav class="text-sm flex ">
-        <button active={true} class="bg-stone-800 rounded-t-lg p-1 flex-1 text-shadow shadow-black">Stats</button>
-        <button class="bg-stone-700 rounded-t-lg p-1 flex-1 text-shadow shadow-black">Sources</button>
+    <nav class="flex text-sm">
+        <button
+            active={true}
+            class="bg-stone-800 shadow-black flex-1 rounded-t-lg p-1 text-shadow"
+            >Stats</button>
+        <button
+            class="bg-stone-700 shadow-black flex-1 rounded-t-lg p-1 text-shadow"
+            >Sources</button>
     </nav>
-    <div class="h-full bg-stone-800">
-        Hello there friends!
-    </div>
+    <div class="bg-stone-800 h-full">Hello there friends!</div>
 </div>
 
 <style>

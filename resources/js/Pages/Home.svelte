@@ -23,7 +23,7 @@
     unstyled={true}
     classBg="fixed z-50 top-0 left-0 flex flex-col justify-center w-screen h-screen bg-base-950/[.6]"
     classWindowWrap="relative m-8 max-h-full"
-    classWindow="relative w-3/5  max-w-full max-h-full my-8 mx-auto rounded-lg shadow-md bg-base-700 text-typo border border-base-500"
+    classWindow="relative lg:w-1/3 md:w-3/5 sm:w-3/4 w-full max-w-full max-h-full my-8 mx-auto rounded-lg shadow-md bg-base-700 text-typo border border-base-500"
     classContent="relative overflow-auto p-4"
     closeButton={false}>
     <Sidebar />
@@ -31,7 +31,7 @@
     <Masonry
         let:item
         items={cards}
-        class="h-header-offset z-10 ml-sidebar bg-black p-2">
+        class="h-header-offset bg-black z-10 ml-sidebar p-2">
         <Card card={item} />
     </Masonry>
 </Modal>

@@ -31,7 +31,7 @@
 <!-- <div class="bg-stone-800 border-stone-800"> -->
 <h2 class="text-center text-2xl">{heading}</h2>
 <hr />
-<p class="text-center mb-4">{message}</p>
+<p class="mb-4 text-center">{message}</p>
 <form id="modal-form" on:submit|preventDefault={_onConfirm} class="mb-8">
     <Input
         bind:value={input}

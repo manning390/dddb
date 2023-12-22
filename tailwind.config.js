@@ -24,7 +24,6 @@ module.exports = {
                 box: '389px'
             },
             colors: {
-                ...colors,
                 transparent: 'transparent',
                 current: 'currentColor',
                 typo: colors.stone['200'],

@@ -23,7 +23,6 @@
     function addPage() {
         openModal(InputDialog, {
             heading: 'Create New Page',
-            message: 'testtesttest',
             placeholder: 'Page Name',
             onConfirm: (val) => pageStore.addPage(val),
             confirmClass: 'bg-success',
@@ -37,23 +36,32 @@
             onConfirm: () => pageStore.removePage(),
         });
     }
+    function renamePage() {
+        openModal(InputDialog, {
+            heading: 'Rename Page',
+            placeholder: 'New Name',
+            onConfirm: (val) => pageStore.renamePage(val),
+            confirmClass: 'bg-success',
+            closeOnOuterClick: false,
+        });
+    }
 </script>
 
 <div id="header" class="z-10 ml-sidebar pt-8">
     <div class="menu">
-        <button class="rounded bg-stone-500 p-1 hover:bg-stone-400">
+        <Button on:click={() => alert('wip')}>
             {#if sidebar}
                 <ChevronLeft />
             {:else}
                 <ChevronRight />
             {/if}
-        </button>
+        </Button>
     </div>
     <div class="flex gap-1 py-2">
         {#each pages as page, idx}
             <Button
                 on:click={() => pageStore.setActivePage(idx)}
-                class={activePage === idx && 'border-2 border-stone-300'}
+                class={activePage === idx && 'border-stone-300 border-2'}
                 >{page.name}</Button>
         {/each}
         <Button on:click={addPage} class="flex items-center"
@@ -67,20 +75,21 @@
                 })}>Add Dev Card</Button>
     </div>
     <div
-        class="flex items-center justify-between border border-stone-500 bg-stone-900 p-2">
+        class="border-stone-500 bg-stone-900 flex items-center justify-between border p-2">
         <div class="flex gap-2">
             <Book class="h-8 w-8" />
-            <h2 class="text-2xl">{pages[activePage].name}</h2>
+            <button on:click={renamePage}
+                ><h2 class="text-2xl">{pages[activePage].name}</h2></button>
         </div>
         <div class="flex gap-2">
             <div
-                class="flex h-8 w-8 select-none items-center justify-center rounded-full bg-black">
+                class="bg-black flex h-8 w-8 select-none items-center justify-center rounded-full">
                 <span>{cardsOnPage}</span>
             </div>
-            <button>
+            <button on:click={() => alert('wip')}>
                 <Share />
             </button>
-            <button>
+            <button on:click={() => alert('wip')}>
                 <Alphabetize />
             </button>
             <button on:click={removePage}>

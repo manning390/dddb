@@ -11,7 +11,7 @@
     bind:value
     use:setType
     class={cn(
-        'box-border rounded border border-base-900 bg-base-900 p-2 text-typo outline-white ring-red',
+        'ring-red outline-white box-border rounded border border-base-900 bg-base-900 p-2 text-typo',
         className
     )}
     {...$$restProps} />

@@ -1,6 +1,5 @@
 <script>
     import cn from '@/cn';
-
 </script>
 
 <svg
