@@ -4,7 +4,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "format": "prettier --write 'resources/**/*.{css,html,js,svelte}'"
+        "format": "prettier --write 'resources/**/*.{html,css,js,ts,svelte}'"
     },
     "devDependencies": {
         "@sveltejs/vite-plugin-svelte": "^3.0.1",
@@ -22,6 +22,9 @@
     "dependencies": {
         "@inertiajs/svelte": "^1.0.14",
         "clsx": "^2.0.0",
+        "devalue": "^4.3.2",
+        "svelte-persisted-store": "^0.8.0",
+        "svelte-simple-modal": "^1.6.1",
         "tailwind-merge": "^2.1.0"
     }
 }

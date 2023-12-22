@@ -3,6 +3,7 @@ export {default as Book} from './Book.svelte';
 export {default as ChevronLeft} from './ChevronLeft.svelte';
 export {default as ChevronRight} from './ChevronRight.svelte';
 export {default as Close} from './Close.svelte';
+export {default as Cog} from './Cog.svelte';
 export {default as Filter} from './Filter.svelte';
 export {default as Magic} from './Magic.svelte';
 export {default as Search} from './Search.svelte';

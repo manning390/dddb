@@ -19,6 +19,7 @@ export default defineConfig({
             "@": resolve(__dirname, "resources/js"),
             ziggy: resolve(__dirname, "vendor/tightenco/ziggy/dist/index.es"),
         },
-        extensions: [".js", ".svelte", ".json"],
+        dedupe: ['svelte', 'svelte/transition', 'svelte/internal'],
+        extensions: [".js", ".ts", ".svelte", ".json"],
     },
 });

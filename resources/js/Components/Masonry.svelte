@@ -35,6 +35,7 @@
     $: nCols = calcCols(masonryWidth, minColWidth, gap);
     $: itemsToCols = items.reduce(
         (cols, item, idx) => {
+            if (!cols) return cols;
             cols[idx % cols.length].push([item, idx]);
             return cols;
         },
@@ -70,3 +71,4 @@
         </div>
     {/each}
 </div>
+

@@ -1,5 +1,6 @@
 <script>
-    import { Search, Filter } from '@/Components/icons';
+    import { Search, Filter } from '@/components/icons';
+    import Input from '@/components/Input.svelte';
 </script>
 
 <div id="sidebar" class="b-0 fixed h-full w-sidebar overflow-y-auto">
@@ -10,15 +11,15 @@
             <span class="text-sm">An unofficial D&amp;D database</span>
         </div>
     </div>
-    <div class="flex items-center gap-4 border-y border-stone-500 bg-stone-700">
-        <div class="flex w-12 justify-center bg-stone-500 p-2 text-white">
+    <div class="flex items-center gap-4 border-y border-base-500 bg-base-700">
+        <div class="flex w-12 justify-center bg-base-500 p-2 text-white">
             <Search />
         </div>
         <div class="flex items-center">
-            <input
+            <Input
                 type="text"
                 name="search"
-                class="w-56 rounded bg-stone-900 p-1 text-xs"
+                class="w-56 bg-base-900 p-1 text-xs"
                 placeholder="Search" />
             <button class="ml-4">
                 <Filter />
@@ -26,3 +27,4 @@
         </div>
     </div>
 </div>
+

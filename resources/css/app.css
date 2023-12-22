@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 html, body {
-    @apply bg-neutral-900 text-stone-200 bg-noise;
+    @apply bg-base-bg text-typo bg-noise;
+}
+hr {
+    @apply border-base-600 my-4;
 }
 .h-header-offset {
     height: calc(100vh - 116px);
