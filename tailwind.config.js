@@ -21,9 +21,13 @@ module.exports = {
             },
             spacing: {
                 sidebar: '370px',
-                box: '389px'
+                box: '389px',
+                '160': '40rem',
             },
             colors: {
+                red: colors.red,
+                black: 'black',
+                white: 'white',
                 transparent: 'transparent',
                 current: 'currentColor',
                 typo: colors.stone['200'],

@@ -2,11 +2,14 @@
     import { setContext } from 'svelte';
     import Modal from 'svelte-simple-modal';
 
+    import cn from '@/cn';
     import Masonry from '@/components/Masonry.svelte';
     import Header from '@/components/Header.svelte';
     import Sidebar from '@/components/Sidebar.svelte';
-    import Card from '@/components/Card.svelte';
+    import Card from '@/components/card/Card.svelte';
+    import Char from '@/components/card/character/Character.svelte';
     import { createPagesStore } from '@/stores/pages';
+    import { createPreferencesStore } from '@/stores/preferences';
 
     setContext('simple-modal', { open: null, close: null });
 
@@ -15,6 +18,8 @@
         pages: [{ name: 'Default', cards: [] }], // prettier-ignore
     });
     setContext('pages', pages);
+    const preferences = createPreferencesStore();
+    setContext('preferences', preferences);
 
     $: cards = $pages.pages[$pages.activePage].cards;
 </script>
@@ -27,11 +32,18 @@
     classContent="relative overflow-auto p-4"
     closeButton={false}>
     <Sidebar />
-    <Header />
-    <Masonry
-        let:item
-        items={cards}
-        class="h-header-offset bg-black z-10 ml-sidebar p-2">
-        <Card card={item} />
-    </Masonry>
+    <main
+        class={cn(
+            $preferences.sidebarExtended && 'ml-sidebar',
+            !($preferences.sidebarExtended) && 'ml-12'
+        )}>
+        <Header />
+        <Masonry
+            let:item
+            items={cards}
+            class="h-header-offset z-10 bg-base-950 p-2">
+            <Char />
+            <!-- <Card card={item} /> -->
+        </Masonry>
+    </main>
 </Modal>

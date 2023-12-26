@@ -1,4 +1,6 @@
 <script>
+    import cn from '@/cn';
+
     let className;
     export { className as class };
     export let type = 'text';

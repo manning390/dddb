@@ -1,8 +1,12 @@
 <script>
+    import {getContext} from 'svelte';
     import { Search, Filter } from '@/components/icons';
     import Input from '@/components/Input.svelte';
+
+    const pref = getContext('preferences');
 </script>
 
+{#if $pref.sidebarExtended}
 <div id="sidebar" class="b-0 fixed h-full w-sidebar overflow-y-auto">
     <div class="flex items-center justify-center gap-4 p-4 text-center">
         <img src="/img/fish.png" alt="Kobold Logo" class="h-[117px]" />
@@ -27,3 +31,10 @@
         </div>
     </div>
 </div>
+{:else}
+    <div id="sidebar" class="b-0 fixed h-full w-12">
+        <button class="mt-[149px] flex w-full justify-center bg-base-500 p-2 border-y border-base-500">
+            <Search />
+        </button>
+    </div>
+{/if}

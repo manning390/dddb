@@ -12,3 +12,7 @@ hr {
 .h-header-offset {
     height: calc(100vh - 116px);
 }
+.debug {
+    box-sizing: border-box;
+    border: 1px solid red;
+}

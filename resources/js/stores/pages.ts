@@ -31,7 +31,7 @@ export interface Page {
     name: string;
     cards: Card[];
 }
-export type StoreType = {
+export interface StoreType {
     activePage: number;
     pages: Page[];
 };

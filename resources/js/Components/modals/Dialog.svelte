@@ -1,6 +1,8 @@
 <script>
-    import Button from '@/components/Button.svelte';
+    import cn from '@/cn';
     import { getContext } from 'svelte';
+
+    import Button from '@/components/Button.svelte';
 
     export let heading = '';
     export let message = '';

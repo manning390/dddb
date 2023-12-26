@@ -6,12 +6,21 @@
     const { removeCard } = getContext('pages');
 
     export let card;
+
+    console.log({ ...card.sections });
+
+    let activeSection = Object.keys(card.sections)[0];
+
+    let size = [ 'small', 'medium', 'large', 'extralarge' ][card.id % 4]; // prettier-ignore
 </script>
 
 <div
     data-id={card.id}
-    class={cn('card border-black  w-80 rounded border bg-base-600', 'small')}>
-    <div class="flex justify-between p-1">
+    class={cn(
+        'flex w-80 flex-col rounded border border-black bg-base-600',
+        size
+    )}>
+    <div class="flex-0 flex justify-between p-1">
         <div class="flex gap-2">
             <img
                 src="https://placehold.co/42"
@@ -35,16 +44,19 @@
             </button>
         </div>
     </div>
-    <nav class="flex text-sm">
-        <button
-            active={true}
-            class="bg-stone-800 shadow-black flex-1 rounded-t-lg p-1 text-shadow"
-            >Stats</button>
-        <button
-            class="bg-stone-700 shadow-black flex-1 rounded-t-lg p-1 text-shadow"
-            >Sources</button>
+    <nav class="flex-0 flex text-sm">
+        {#each Object.keys(card.sections) as section, idx}
+            <button
+                class={cn(
+                    'flex-1 rounded-t-lg bg-base-800 p-1 shadow-black text-shadow',
+                    idx !== 0 && 'bg-base-700'
+                )}>{section}</button>
+        {/each}
     </nav>
-    <div class="bg-stone-800 h-full">Hello there friends!</div>
+    <div class="h-full flex-1 rounded-b bg-base-800 p-2">
+        <!-- {card.sections[activeSection].body} -->
+
+    </div>
 </div>
 
 <style>

@@ -1,4 +1,5 @@
 <script>
+    import cn from '@/cn';
     import { getContext } from 'svelte';
     import Button from '@/components/Button.svelte';
     import Input from '@/components/Input.svelte';
